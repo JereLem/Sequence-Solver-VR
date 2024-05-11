@@ -43,6 +43,7 @@ public class VrGameManager : MonoBehaviour
             Time.timeScale = 0f;
             timerText.text = "00:00";
             playerUI.SetActive(true);
+            gameStats.gameover = true;
             
         }
     }

@@ -32,5 +32,6 @@ public class ScenesManager : MonoBehaviour
     public void Return()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Time.timeScale = 1f;
     }
 }

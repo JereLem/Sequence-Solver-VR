@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     public InputActionAsset inputActions;
     private Canvas pauseUI;
     private InputAction menu;
+    public GameStats gameStats;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +26,29 @@ public class PauseMenu : MonoBehaviour
 
     public void MenuToggle(InputAction.CallbackContext context)
     {
-        pauseUI.enabled = !pauseUI.enabled;
+        if (!gameStats.gameover)
+        {
+            pauseUI.enabled = !pauseUI.enabled;
+
+            if (pauseUI.enabled)
+            {
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
+        }
+        else 
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     public void Return()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Time.timeScale = 1f;
     }
 
     // Exit the game

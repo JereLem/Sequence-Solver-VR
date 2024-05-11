@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameStats : MonoBehaviour
 {
     public int solvedMinigames;
+    public bool gameover;
     public string name;
 
     // Start is called before the first frame update
@@ -12,6 +13,7 @@ public class GameStats : MonoBehaviour
     {
         solvedMinigames = 0;
         name = "";
+        gameover = false;
     }
 
 }
