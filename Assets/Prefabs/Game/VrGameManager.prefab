@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 521662577669298777}
   - component: {fileID: 5763210016511656798}
-  - component: {fileID: 2214586654508450108}
   - component: {fileID: 5043108657563039598}
   m_Layer: 0
   m_Name: VrGameManager
@@ -54,20 +53,9 @@ MonoBehaviour:
   gameTime: 300
   audioCue: {fileID: 8300000, guid: f3d22d6421f041749a8f002e235d6fb4, type: 3}
   timerText: {fileID: 0}
---- !u!114 &2214586654508450108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492730827462781040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fb76e7983fc98498c84b8b8aaacb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  solvedMinigames: 0
-  name: 
+  solvedText: {fileID: 0}
+  gameStats: {fileID: 0}
+  playerUI: {fileID: 0}
 --- !u!82 &5043108657563039598
 AudioSource:
   m_ObjectHideFlags: 0

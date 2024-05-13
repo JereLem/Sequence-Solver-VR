@@ -11,23 +11,22 @@ public class VrGameManager : MonoBehaviour
     public float gameTime = 300f; // Total duration of the game in seconds
     public AudioClip audioCue; // Audio cue for indicating mini-game locations
 
+    // Timer variables
     private float gameTimer = 0f;
-    private float minigameTimer = 0f;
     private GameObject currentMiniGame;
+    private float elapsedTime;
 
-    // Timer for the game
+    // Timer, Solved text for the game
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI solvedText;
 
     public GameStats gameStats; // Access Gamestats
-    float elapsedTime;
     [SerializeField] public GameObject playerUI;
 
     private void Start()
     {
         elapsedTime = gameTime;
         StartCoroutine(SpawnMiniGames());
-
     }
 
     private void Update()
@@ -73,7 +72,6 @@ public class VrGameManager : MonoBehaviour
 
             // Update timers
             gameTimer += 1f;
-            minigameTimer += 1f;
         }
     }
 

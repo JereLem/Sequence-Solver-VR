@@ -9,7 +9,8 @@ public class ScenesManager : MonoBehaviour
     // Start the game
     public void StartGame()
     {
-        SceneManager.LoadScene(1); // GAme starts from 0 scene "StartMenu"
+        SceneManager.LoadScene(1); // Game starts from 0 scene "StartMenu"
+        Time.timeScale = 1f;
     }
 
     // Load the next scene
@@ -17,6 +18,7 @@ public class ScenesManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+        Time.timeScale = 1f;
     }
 
     // Exit the game

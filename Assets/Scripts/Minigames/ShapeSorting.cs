@@ -17,7 +17,7 @@ public class ShapeSorting : MonoBehaviour
     // Dictionary to keep track of the slot where each shape is dropped
     private Dictionary<GameObject, GameObject> shapeSlotMap;
 
-    // Access Gamestats
+    // Access Gamestats & VrGameManager
     private GameStats gameStats;
     private GameObject vrgm;
 
@@ -49,7 +49,6 @@ public class ShapeSorting : MonoBehaviour
         {
             slotShapeCounts[slot] = 0;
         }
-
 
         // Initialize the shapeSlotMap dictionary
         shapeSlotMap = new Dictionary<GameObject, GameObject>();
@@ -119,7 +118,7 @@ public class ShapeSorting : MonoBehaviour
     {
         List<Vector3> positions = new List<Vector3>();
 
-        // Generate random positions within a grid (assuming slots are arranged in a grid)
+        // Generate random positions within a grid
         for (int i = 0; i < count; i++)
         {
             int randomSlotIndex = Random.Range(0, slots.Length);
@@ -130,7 +129,7 @@ public class ShapeSorting : MonoBehaviour
         return positions;
     }
 
-    // Fisher-Yates shuffle for arrays
+    // Function to shuffle the array
     void ShuffleArray<T>(T[] array)
     {
         for (int i = array.Length - 1; i > 0; i--)
