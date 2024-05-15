@@ -55,7 +55,7 @@ public class VrGameManager : MonoBehaviour
             {
                 // Calculate random position on the cylindrical world
                 Vector3 randomPos = Random.onUnitSphere * worldRadius;
-                randomPos.y = 1.2f; // Ensure mini-games spawn at ground level
+                randomPos.y = 1.01f; // Ensure mini-games spawn at ground level
 
                 // Randomly select a mini-game prefab
                 GameObject randomMiniGamePrefab = miniGamePrefabs[Random.Range(0, miniGamePrefabs.Length)];

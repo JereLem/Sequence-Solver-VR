@@ -122,7 +122,7 @@ public class ShapeSorting : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             int randomSlotIndex = Random.Range(0, slots.Length);
-            Vector3 randomPosition = slots[randomSlotIndex].transform.position + new Vector3(Random.Range(-10f ,10f), 2f, Random.Range(5f ,10f));
+            Vector3 randomPosition = slots[randomSlotIndex].transform.position + new Vector3(Random.Range(-5f ,5f), 2f, Random.Range(5f ,5f));
             positions.Add(randomPosition);
         }
 

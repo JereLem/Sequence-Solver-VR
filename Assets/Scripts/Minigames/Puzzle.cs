@@ -35,8 +35,8 @@ public class Puzzle : MonoBehaviour
     void AssignRandomColors()
     {
         // Define positions for the cubes in a line
-        Vector3 lineStart = new Vector3(-8f, 0f, -8f);
-        float spacing = 2f;
+        Vector3 lineStart = new Vector3(-3f, 0f, -3f);
+        float spacing = 1f;
 
         // Define colors for the cubes and slots
         Color[] colors = new Color[]
