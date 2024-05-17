@@ -375,7 +375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Match colors
+  m_text: Match rocks to slots by colors
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91f69c94a79957143a18e6eb89eef171, type: 2}
   m_sharedMaterial: {fileID: -2400504790767819060, guid: 91f69c94a79957143a18e6eb89eef171, type: 2}
