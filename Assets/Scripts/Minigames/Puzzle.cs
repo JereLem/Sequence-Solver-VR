@@ -88,12 +88,14 @@ public class Puzzle : MonoBehaviour
         if (droppedCubeColor == slotColor)
         {
             Debug.Log("Colors match!");
-
+            
             // After cube is dropped on the right color it will lock there
             XRGrabInteractable interact = droppedCube.GetComponent<XRGrabInteractable>();
             interact.enabled = false;
 
             droppedCube.transform.rotation = Quaternion.identity;
+            Vector3 slotCenter = slot.transform.position;
+            droppedCube.transform.position = new Vector3(slotCenter.x, 1.01f, slotCenter.z);
 
             // Freeze in place
             Rigidbody cubeRb = droppedCube.GetComponent<Rigidbody>();

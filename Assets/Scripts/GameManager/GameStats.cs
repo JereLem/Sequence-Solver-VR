@@ -138,7 +138,6 @@ public class GameStats : MonoBehaviour
         LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score,
             ((data) =>
             {
-                username.Substring(0, 4);
                 GetLeaderboard();
             }));
     }
