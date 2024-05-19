@@ -638,8 +638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LocomotionProvider: {fileID: 62612102}
-  m_MinHeight: -2
-  m_MaxHeight: 2.1
+  m_MinHeight: -1.5
+  m_MaxHeight: Infinity
 --- !u!143 &62612100
 CharacterController:
   m_ObjectHideFlags: 0
@@ -806,6 +806,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 574118945}
+  - {fileID: 2044157446}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &63222966
@@ -15281,7 +15282,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 62612106}
     m_Modifications:
     - target: {fileID: 159852857846014885, guid: 99d8950124901df4486d199803e52594, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -15438,6 +15439,18 @@ PrefabInstance:
     - target: {fileID: 1608172128847327815, guid: 99d8950124901df4486d199803e52594, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.36037737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612626460848546537, guid: 99d8950124901df4486d199803e52594, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612626460848546537, guid: 99d8950124901df4486d199803e52594, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612626460848546537, guid: 99d8950124901df4486d199803e52594, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.36078432
       objectReference: {fileID: 0}
     - target: {fileID: 1845930094106368063, guid: 99d8950124901df4486d199803e52594, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -15777,7 +15790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4248087665178141478, guid: 99d8950124901df4486d199803e52594, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4248087665178141478, guid: 99d8950124901df4486d199803e52594, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30999,6 +31012,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3490930834329334354, guid: 08bdb42a7413db34e867890b29e20ecd, type: 3}
   m_PrefabInstance: {fileID: 1141860615}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &2044157446 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4248087665178141478, guid: 99d8950124901df4486d199803e52594, type: 3}
+  m_PrefabInstance: {fileID: 1049237671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2048076845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8407946972163067645, guid: 92101ed146e7f434cb43a3680c518e75, type: 3}
@@ -31417,6 +31435,8 @@ MonoBehaviour:
   inputName: {fileID: 102683373}
   infotext: {fileID: 1247075326}
   returnB: {fileID: 1311502447}
+  audioLoss: {fileID: 8300000, guid: 615c3976b63306e49957a0928be863ed, type: 3}
+  audioWin: {fileID: 8300000, guid: 009f5cfe9c6b5354baea2dc918c92570, type: 3}
   submitScoreEvent:
     m_PersistentCalls:
       m_Calls:
@@ -33159,7 +33179,7 @@ PrefabInstance:
       objectReference: {fileID: 1349713174}
     - target: {fileID: 5763210016511656798, guid: 05221e4de4cdcd245a4343a7314a289b, type: 3}
       propertyPath: worldRadius
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5763210016511656798, guid: 05221e4de4cdcd245a4343a7314a289b, type: 3}
       propertyPath: miniGamePrefabs.Array.size
@@ -33286,7 +33306,6 @@ SceneRoots:
   - {fileID: 1689816021}
   - {fileID: 2101903364}
   - {fileID: 62612106}
-  - {fileID: 1049237671}
   - {fileID: 1448417181}
   - {fileID: 4108018930569729259}
   - {fileID: 1452196351}

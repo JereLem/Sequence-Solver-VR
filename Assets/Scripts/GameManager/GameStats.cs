@@ -30,6 +30,13 @@ public class GameStats : MonoBehaviour
     private GameObject returnB;
 
     private bool leaderboardChecked = false;
+    [SerializeField]
+    public AudioClip audioLoss; // Audio cue for indicating loss
+    [SerializeField]
+    public AudioClip audioWin; // Audio cue for indicating win
+
+    private AudioSource audioSource; // Reference to AudioSource component
+    private GameObject vrgm;
 
 
     private string publicLeaderboardKey =
@@ -39,11 +46,13 @@ public class GameStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        solvedMinigames = 0;
+        solvedMinigames = 1;
         playername = "Player";
         gameover = false;
         leaderboardChecked = false; // Reset the flag
         GetLeaderboard();
+        vrgm = GameObject.FindGameObjectWithTag("VrGameManager");
+        audioSource = vrgm.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -85,6 +94,7 @@ public class GameStats : MonoBehaviour
         // If player's score is better than any score on the leaderboard, prompt for name input
         if (playerScoreIsBetter)
         {
+            audioSource.PlayOneShot(audioWin);
             infotext.text = "New score! Enter a name & press enter to save your score!";
             inputName.gameObject.SetActive(true);
             returnB.SetActive(false);
@@ -98,6 +108,7 @@ public class GameStats : MonoBehaviour
         else
         {
             infotext.text = "Dammit, you didn't get to the leaderboard. Try again!";
+            audioSource.PlayOneShot(audioLoss);
         }
     }
 
@@ -106,7 +117,7 @@ public class GameStats : MonoBehaviour
     { 
         if (inputName.text != null)
             {
-                playername = inputName.text;
+                playername = inputName.text.Substring(0, Mathf.Min(inputName.text.Length, 8));
             }
         else
             {
