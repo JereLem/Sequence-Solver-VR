@@ -31,6 +31,11 @@ public class Puzzle : MonoBehaviour
         // Assign random colors to the cubes and slots
         AssignRandomColors();
     }
+    void Update(){
+        if (gameStats.gameover){
+            DeletePuzzle();
+        }
+    }
 
     void AssignRandomColors()
     {

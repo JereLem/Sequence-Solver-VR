@@ -46,7 +46,7 @@ public class GameStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        solvedMinigames = 1;
+        solvedMinigames = 0;
         playername = "Player";
         gameover = false;
         leaderboardChecked = false; // Reset the flag

@@ -75,6 +75,10 @@ public class ShapeSorting : MonoBehaviour
             DeleteSorting(); // Call the function to delete the game
             gameStats.solvedMinigames++;
         }
+        else if (gameStats.gameover)
+        {
+            DeleteSorting();
+        }
     }
 
 
