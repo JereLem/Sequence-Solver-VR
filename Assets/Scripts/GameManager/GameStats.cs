@@ -29,6 +29,9 @@ public class GameStats : MonoBehaviour
     [SerializeField]
     private GameObject returnB;
 
+    private bool leaderboardChecked = false;
+
+
     private string publicLeaderboardKey =
         "4006de3f3a3c1d270b644cbf679d2b0e0bccd685b2043a18ab3df79070186155";
 
@@ -36,17 +39,19 @@ public class GameStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        solvedMinigames = 5;
+        solvedMinigames = 0;
         playername = "Player";
         gameover = false;
+        leaderboardChecked = false; // Reset the flag
         GetLeaderboard();
     }
 
     void Update()
     {
-        if (gameover)
+        if (gameover && !leaderboardChecked)
         {
             CheckLeaderboard();
+            leaderboardChecked = true;
         }
     }
 
@@ -84,22 +89,11 @@ public class GameStats : MonoBehaviour
             inputName.gameObject.SetActive(true);
             returnB.SetActive(false);
             
-            // Now you can access the NonNativeKeyboard class and its static Instance property
+            // Access the NonNativeKeyboard
             NonNativeKeyboard keyboardInstance = NonNativeKeyboard.Instance;
 
-            // Example of calling a method on the NonNativeKeyboard instance
+            // NonNativeKeyboard instance
             keyboardInstance.PresentKeyboard();
-
-            // Rewrite default name to the input field name
-
-            if (inputName.text != null)
-            {
-                playername = inputName.text;
-            }
-            else
-            {
-                playername = "Player";
-            }
         }
         else
         {
@@ -110,8 +104,18 @@ public class GameStats : MonoBehaviour
 
     public void SubmitScore()
     { 
+        if (inputName.text != null)
+            {
+                playername = inputName.text;
+            }
+        else
+            {
+                playername = "Player";
+            }
+        
         Debug.Log(playername);
         Debug.Log(solvedMinigames);
+
         submitScoreEvent.Invoke(playername, solvedMinigames);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1f;
@@ -138,6 +142,7 @@ public class GameStats : MonoBehaviour
         LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score,
             ((data) =>
             {
+                Debug.Log(data.ToString());
                 GetLeaderboard();
             }));
     }

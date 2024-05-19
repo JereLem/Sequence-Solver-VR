@@ -3074,7 +3074,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -0.0000026897, y: -11.81}
-  m_SizeDelta: {x: 90, y: 20}
+  m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.49999997, y: 0.49999958}
 --- !u!114 &1162254856
 MonoBehaviour:
@@ -3096,7 +3096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Scores can take a moment to load!
+  m_text: Scores can take a moment to load! The server might be offline as well!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91f69c94a79957143a18e6eb89eef171, type: 2}
   m_sharedMaterial: {fileID: -2400504790767819060, guid: 91f69c94a79957143a18e6eb89eef171, type: 2}
@@ -5724,7 +5724,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 536478684}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4033987942681324338, guid: 6f0e5cb4bb2a10d4980c1b2b7b659acb, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3164981558026837475, guid: 6f0e5cb4bb2a10d4980c1b2b7b659acb, type: 3}
       insertIndex: -1
